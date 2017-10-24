@@ -2,7 +2,7 @@
 Classe responsável por recuperar as tabelas de um banco de dados e gerar a classe de CRUD das mesmas
 
 # Arquivo index.php
-<?php
+
         
         $dados = [];
         
@@ -14,4 +14,4 @@ Classe responsável por recuperar as tabelas de um banco de dados e gerar a clas
         
         echo $dados['Form'];
         echo $dados['ScriptAjax'];
-  ?>
+ 
