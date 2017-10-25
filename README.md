@@ -3,9 +3,13 @@
 
 # Métodos Públicos da classe
 <strong>setDatabase("banco");</strong>
-<p>Responsável por passar a classe o nome do banco de dados a qual se conectará!</p>
+<p>Responsável por passar á classe o nome do banco de dados á qual se conectará!</p>
 
+<strong>setUrl("requisicao_ajax.php");</strong>
+<p>Responsável por passar a url no qual será feito a requisição ajax</p>
 
+<strong>setUrl("requisicao_ajax.php");</strong>
+<p>Responsável por passar a url no qual será feito a requisição ajax</p>
 
 <p> <strong>Exemplo de uso:</strong></p>
 # Arquivo index.php
