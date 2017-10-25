@@ -1,6 +1,12 @@
 # GeneratorClassCrud
 <h3>Classe responsável por recuperar as tabelas de um banco de dados e gerar a classe de CRUD das mesmas!</h3>
 
+# Métodos Públicos da classe
+<strong>setDatabase("banco");</strong>
+<p>Responsável por passar a classe o nome do banco de dados a qual se conectará!</p>
+
+
+
 <p> <strong>Exemplo de uso:</strong></p>
 # Arquivo index.php
       
