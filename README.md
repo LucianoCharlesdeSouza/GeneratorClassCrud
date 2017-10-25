@@ -10,6 +10,7 @@
 
 <strong>CreateHtml();</strong>
 <p>Responsável por criar o Html do formulário ja preenchido com os nomes das tabelas do banco escolhido em <strong>setDatabase()</strong>, mais campos restantes!</p>
+<p>Terá como retorno um array com 02 indices <strong>Form</strong> e <strong>ScriptAjax</strong></p>
 
 <strong>GenerateClass();</strong>
 <p>Responsável por receber os dados do formulário e gerar as classes de Crud! (este método de ser passado no arquivo onde será feito a requisição ajax pelo método <strong>setUrl()</strong>)</p>
