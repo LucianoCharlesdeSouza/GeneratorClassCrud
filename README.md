@@ -8,8 +8,11 @@
 <strong>setUrl("requisicao_ajax.php");</strong>
 <p>Responsável por passar a url no qual será feito a requisição ajax</p>
 
-<strong>setUrl("requisicao_ajax.php");</strong>
-<p>Responsável por passar a url no qual será feito a requisição ajax</p>
+<strong>CreateHtml();</strong>
+<p>Responsável por criar o Html do formulário ja preenchido com os nomes das tabelas do banco escolhido em <strong>setDatabase()</strong>, mais campos restantes!</p>
+
+<strong>GenerateClass();</strong>
+<p>Responsável por receber os dados do formulário e gerar as classes de Crud! (este método de ser passado no arquivo onde será feito a requisição ajax pelo método <strong>setUrl()</strong>)</p>
 
 <p> <strong>Exemplo de uso:</strong></p>
 # Arquivo index.php
