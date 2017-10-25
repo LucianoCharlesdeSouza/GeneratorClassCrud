@@ -47,9 +47,9 @@
     
     
     
-    
+   <h3>Extrair o Formulário na View</h3>
    # Arquivo crudview.php
-    <h3>Extrair o Formulário na View</h3>
+   
     
         echo $Form; 
         echo $ScriptAjax;
