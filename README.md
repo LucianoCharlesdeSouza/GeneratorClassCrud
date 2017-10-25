@@ -22,9 +22,8 @@
         
 
 <h3>Exemplo de uso na estrutura MVC</h3>
-# Class createcrudController.php
+# Arquivo de classe createcrudController.php
 
-class createcrudController extends Controller {
     private $Crud,
             $dados = [];
             
@@ -33,8 +32,7 @@ class createcrudController extends Controller {
         $this->Crud->setDatabase("nome_do_seu_banco");
     }
 
-    public function index() {
-            
+    public function index() {         
         $this->Crud->setUrl("http://localhost/seuaprojeto/createcrud/create");
         $this->dados = $this->Crud->CreateHtml();
 
@@ -42,8 +40,10 @@ class createcrudController extends Controller {
     }
 
     public function create() {
-
         $this->Crud->GenerateClass();
     }
+    
+    
+    <h3>Extrair o Formulário na View</h3>
+    # Arquivo crudview.php
 
-}
