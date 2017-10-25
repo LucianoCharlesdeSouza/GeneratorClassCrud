@@ -24,6 +24,7 @@
 <h3>Exemplo de uso na estrutura MVC</h3>
 # Class createcrudController.php
 
+
 class createcrudController extends Controller {
     private $Crud,
             $dados = [];
