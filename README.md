@@ -22,3 +22,28 @@
         
 
 <h3>Exemplo de uso na estrutura MVC</h3>
+# Class createcrudController.php
+
+class createcrudController extends Controller {
+    private $Crud,
+            $dados = [];
+
+    public function __construct() {
+        $this->Crud = new GeneratorCrud();
+        $this->Crud->setDatabase("nome_do_seu_banco");
+    }
+
+    public function index() {
+            
+        $this->Crud->setUrl("http://localhost/seuaprojeto/createcrud/create");
+        $this->dados = $this->Crud->CreateHtml();
+
+        $this->loadView('crudview', $this->dados);
+    }
+
+    public function create() {
+
+        $this->Crud->GenerateClass();
+    }
+
+}
