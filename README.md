@@ -42,8 +42,3 @@
     public function create() {
         $this->Crud->GenerateClass();
     }
-    
-    
-    <h3>Extrair o Formulário na View</h3>
-    # Arquivo crudview.php
-
