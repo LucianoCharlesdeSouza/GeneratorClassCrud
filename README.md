@@ -24,11 +24,10 @@
 <h3>Exemplo de uso na estrutura MVC</h3>
 # Class createcrudController.php
 
-
 class createcrudController extends Controller {
     private $Crud,
             $dados = [];
-
+            
     public function __construct() {
         $this->Crud = new GeneratorCrud();
         $this->Crud->setDatabase("nome_do_seu_banco");
