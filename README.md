@@ -1,6 +1,7 @@
 # GeneratorClassCrud
 <h3>Classe responsável por recuperar as tabelas de um banco de dados e gerar a classe de CRUD das mesmas!</h3>
 
+<p> <strong>Exemplo de uso:</strong></p>
 # Arquivo index.php
       
         $dados = [];
@@ -19,3 +20,5 @@
         $Crud = new GeneratorCrud();
         $Crud->GenerateClass();
         
+
+<h3>Exemplo de uso na estrutura MVC</h3>
