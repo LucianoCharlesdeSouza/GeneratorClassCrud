@@ -338,7 +338,7 @@ class GeneratorCrud extends Model {
 
     public function ReadById() {
         $class = $this->CreateRowNR('//Metodo que fara a consulta a todos os campos da tabela.');
-        $class .= $this->CreateRowNR('public function RealdById($id){');
+        $class .= $this->CreateRowNR('public function ReadById($id){');
         $class .= $this->CreateRowNR('$this->Sql = "SELECT * FROM  " .$this->table." WHERE ' . $this->FieldId() . ' = ' . $this->BindId() . '";');
         $class .= $this->CreateRowNR('$this->Sql = $this->db->prepare($this->Sql);');
         $class .= $this->CreateRowNR('$this->Sql->bindValue("' . $this->BindId() . '", $id);');
