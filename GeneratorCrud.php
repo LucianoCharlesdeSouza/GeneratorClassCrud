@@ -134,7 +134,7 @@ class GeneratorCrud extends Model {
 
     /* Recupera todos os nomes das colunas da tabela selecionada */
 
-    private function getColumnsTable() {
+    public function getColumnsTable() {
         $sql = "SELECT * FROM information_schema.COLUMNS "
                 . "WHERE TABLE_SCHEMA = :nome_do_bd "
                 . "AND TABLE_NAME = :nome_da_tabela;
@@ -291,6 +291,16 @@ class GeneratorCrud extends Model {
         $class .= $this->CreateRowNR("//Atributo responsavel por armazenar o resultado dos metodos do CRUD.");
         $class .= $this->CreateRowNR('private $result;');
         $class .= $this->CreateRowNR("private {$this->getColumnsTable()};");
+        $class .= $this->CreateRowNR("//Atributo responsavel por armazenar os nomes dos campos em forma de Array");
+        $class .= $this->CreateRowNR("{$this->arrayFields()}");
+        $class .= $this->CreateRowNR('//Metodo responsavel por resgatar o Atributo $arrayFields');
+        $class .= $this->CreateRowNR('public function getArrayFields($id = false){');
+        $class .= $this->CreateRowNR('if($id == false){');
+        $class .= $this->CreateRowNR('unset($this->arrayFields[0]);');
+        $class .= $this->CreateRowNR('return $this->arrayFields;');
+        $class .= $this->CreateRowNR('}');
+        $class .= $this->CreateRowNR('return $this->arrayFields;');
+        $class .= $this->CreateRowNR('}');
         $class .= $this->CreateGetResult();
         $class .= $this->Create();
         $class .= $this->ReadAll();
@@ -301,6 +311,15 @@ class GeneratorCrud extends Model {
         $file = fopen($directory . $Table . ".php", "w");
         fwrite($file, utf8_encode($class));
         fclose($file);
+    }
+
+    /* Cria um array com os campos da tabela */
+
+    private function arrayFields() {
+        $this->fields = str_replace('$', "'", $this->fields);
+        $array = implode(',', $this->fields);
+        $array = str_replace(',', "',", $array);
+        return 'private $arrayFields = [' . $array . "'];";
     }
 
     /* Cria o método getResult() */
