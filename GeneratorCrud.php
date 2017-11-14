@@ -316,8 +316,9 @@ class GeneratorCrud extends Model {
     /* Cria um array com os campos da tabela */
 
     private function arrayFields() {
-        $this->fields = str_replace('$', "'", $this->fields);
-        $array = implode(',', $this->fields);
+        $arr = $this->fields;
+        $arr = str_replace('$', "'", $arr);
+        $array = implode(',', $arr);
         $array = str_replace(',', "',", $array);
         return 'private $arrayFields = [' . $array . "'];";
     }
