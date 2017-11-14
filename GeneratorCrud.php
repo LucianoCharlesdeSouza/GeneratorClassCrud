@@ -293,13 +293,13 @@ class GeneratorCrud extends Model {
         $class .= $this->CreateRowNR("private {$this->getColumnsTable()};");
         $class .= $this->CreateRowNR("//Atributo responsavel por armazenar os nomes dos campos em forma de Array");
         $class .= $this->CreateRowNR("{$this->arrayFields()}");
-        $class .= $this->CreateRowNR('//Metodo responsavel por resgatar o Atributo $arrayFields');
-        $class .= $this->CreateRowNR('public function getArrayFields($id = false){');
-        $class .= $this->CreateRowNR('if($id == false){');
-        $class .= $this->CreateRowNR('unset($this->arrayFields[0]);');
+        $class .= $this->CreateRowNR('//Metodo responsavel por resgatar o Atributo $arrayFields com todos ou apenas os indices escolhidos');
+
+        $class .= $this->CreateRowNR('public function getArrayFields(array $fields = null) {');
+        $class .= $this->CreateRowNR('if ($fields == null) {');
         $class .= $this->CreateRowNR('return $this->arrayFields;');
         $class .= $this->CreateRowNR('}');
-        $class .= $this->CreateRowNR('return $this->arrayFields;');
+        $class .= $this->CreateRowNR('return array_diff($this->arrayFields, $fields);');
         $class .= $this->CreateRowNR('}');
         $class .= $this->CreateGetResult();
         $class .= $this->Create();
