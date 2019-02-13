@@ -17,6 +17,7 @@
 
 <p> <strong>Exemplo de uso:</strong></p>
 # Arquivo index.php
+
 ```php
         $dados = [];
         
@@ -28,15 +29,17 @@
         
         echo $dados['Form'];
         echo $dados['ScriptAjax'];
- 
+``` 
 # Arquivo requisicao_ajax.php
+
 ```php        
         $Crud = new GeneratorCrud();
         $Crud->GenerateClass();
-        
+```        
 
 <h3>Exemplo de uso na estrutura MVC</h3>
 # Arquivo de classe createcrudController.php
+
 ```php
     private $Crud,
             $dados = [];
@@ -56,16 +59,13 @@
     public function create() {
         $this->Crud->GenerateClass();
     }
-    
-    
-    
-    
-    
+```    
+        
    <h3>Extrair o Formulário na View</h3>
    # Arquivo crudview.php
    
  ```php 
         echo $Form; 
         echo $ScriptAjax;
-   
+```   
     
